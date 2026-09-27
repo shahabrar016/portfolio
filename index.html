@@ -1,691 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Shah Abrar Ul Haq Peerzada</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shah Abrar Ul Haq Peerzada — Product & Operations</title>
+<meta name="description" content="Product & Operations profile of Shah Abrar Ul Haq Peerzada, IIT Bombay. PM intern at RevisionDojo (YC F24), founder of Penholt, consultant at PACE IIT & Medical.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap');
+  :root{
+    --bg:#0a0a0c; --surface:#121318; --surface2:#171922; --border:#23262e;
+    --text:#e9ebee; --muted:#9aa1ab; --accent:#5aa2ff; --accent-soft:rgba(90,162,255,.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Source Serif 4',Georgia,'Times New Roman',serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .container{max-width:1000px;margin:0 auto;padding:0 24px}
+  section{padding:64px 0;border-top:1px solid var(--border)}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --bg:        #0d0d0d;
-    --surface:   #161616;
-    --border:    #232323;
-    --text:      #e8e6e1;
-    --muted:     #7a7875;
-    --accent:    #c9875a;
-    --tag-bg:    #1e1e1e;
-    --tag-text:  #9a9693;
-    --max:       680px;
+  /* ---------- Nav (no logo — centered links) ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,12,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  nav .container{display:flex;justify-content:center;align-items:center;height:60px}
+  nav ul{display:flex;gap:28px;list-style:none;flex-wrap:wrap;justify-content:center}
+  nav ul a{color:var(--muted);font-size:.92rem;font-weight:500}
+  nav ul a:hover{color:var(--text);text-decoration:none}
+  @media(max-width:640px){
+    nav .container{height:auto;padding:10px 12px}
+    nav ul{gap:14px 18px}
+    nav ul a{font-size:.8rem}
   }
 
-  html { scroll-behavior: smooth; }
+  /* ---------- Hero ---------- */
+  header{padding:150px 0 70px;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(90,162,255,.13),transparent)}
+  .kicker{color:var(--accent);font-weight:600;font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+  h1{font-size:clamp(2.1rem,5vw,3.2rem);font-weight:700;line-height:1.15;letter-spacing:-.01em}
+  .tagline{max-width:660px;color:var(--muted);font-size:1.1rem;margin:20px 0 30px}
+  .tagline strong{color:var(--text);font-weight:600}
+  .btns{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-block;padding:11px 22px;border-radius:9px;font-weight:600;font-size:.95rem;transition:transform .15s}
+  .btn:hover{text-decoration:none;transform:translateY(-2px)}
+  .btn-primary{background:var(--accent);color:#0a0a0c}
+  .btn-ghost{border:1px solid var(--border);color:var(--text);background:var(--surface)}
+  .location{color:var(--muted);font-size:.9rem;margin-top:26px}
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
-    font-size: 16px;
-    line-height: 1.7;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-  }
+  /* ---------- Stats ---------- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:56px 0}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 18px;text-align:center}
+  .stat b{display:block;font-size:1.75rem;font-weight:700;color:var(--accent)}
+  .stat span{color:var(--muted);font-size:.82rem;letter-spacing:.03em}
+  @media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
 
-  /* ── layout ── */
-  .page {
-    max-width: var(--max);
-    margin: 0 auto;
-    padding: 0 24px;
-  }
+  h2{font-size:1.65rem;font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
+  .section-sub{color:var(--muted);margin-bottom:34px;font-size:1rem}
 
-  section { padding: 72px 0; border-top: 1px solid var(--border); }
-  section:first-of-type { border-top: none; }
+  /* ---------- Featured ---------- */
+  .featured{background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--border);border-radius:16px;padding:34px;position:relative;overflow:hidden}
+  .featured::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--accent),transparent 70%)}
+  .badge{display:inline-block;background:var(--accent-soft);color:var(--accent);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:99px;margin-bottom:16px}
+  .featured h3{font-size:1.5rem;font-weight:700}
+  .featured .meta{color:var(--muted);font-size:.92rem;margin:4px 0 16px}
+  .featured p{color:#c7ccd4;max-width:720px}
+  .modules{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:22px}
+  .module{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:.93rem;color:var(--muted)}
+  .module b{display:block;color:var(--text);font-size:.95rem;margin-bottom:3px}
+  .featured .link{display:inline-block;margin-top:22px;font-weight:600}
 
-  /* ── eyebrow ── */
-  .eyebrow {
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 32px;
-  }
+  /* ---------- Experience ---------- */
+  .xp{border-left:2px solid var(--border);padding-left:28px;margin-left:6px}
+  .xp-item{position:relative;padding-bottom:38px}
+  .xp-item:last-child{padding-bottom:0}
+  .xp-item::before{content:"";position:absolute;left:-35px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+  .xp-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;align-items:baseline}
+  .xp-head h3{font-size:1.15rem;font-weight:700}
+  .xp-head .when{color:var(--muted);font-size:.86rem;white-space:nowrap}
+  .xp-co{color:var(--accent);font-weight:600;font-size:.95rem;margin:2px 0 12px}
+  .xp-co span{color:var(--muted);font-weight:400}
+  .xp-item ul{list-style:none}
+  .xp-item li{position:relative;padding-left:20px;color:#c7ccd4;font-size:.96rem;margin-bottom:9px}
+  .xp-item li::before{content:"▸";position:absolute;left:0;color:var(--accent);font-size:.8rem;top:2px}
 
-  /* ── hero ── */
-  #hero { padding: 100px 0 72px; border-top: none; }
+  /* ---------- Projects ---------- */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;transition:border-color .2s,transform .2s}
+  .card:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+  .chip{background:var(--accent-soft);color:var(--accent);font-size:.7rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:3px 10px;border-radius:99px}
+  .card h3{font-size:1.08rem;font-weight:700}
+  .card .when{color:var(--muted);font-size:.82rem;margin:2px 0 12px}
+  .card ul{list-style:none}
+  .card li{position:relative;padding-left:18px;color:var(--muted);font-size:.9rem;margin-bottom:7px}
+  .card li::before{content:"–";position:absolute;left:0;color:var(--accent)}
 
-  .hero-label {
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 20px;
-  }
+  /* ---------- Leadership ---------- */
+  .lead-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:720px){.lead-grid{grid-template-columns:1fr}}
 
-  h1 {
-    font-family: 'DM Serif Display', Georgia, serif;
-    font-size: clamp(36px, 6vw, 52px);
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--text);
-    margin-bottom: 24px;
-  }
+  /* ---------- Skills ---------- */
+  .skill-row{margin-bottom:22px}
+  .skill-row h3{font-size:.82rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .skill-row p{color:var(--muted);font-size:.95rem}
 
-  h1 em {
-    font-style: italic;
-    color: var(--accent);
-  }
+  /* ---------- Education ---------- */
+  .edu{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:26px}
+  .edu h3{font-size:1.12rem;font-weight:700}
+  .edu .meta{color:var(--muted);font-size:.92rem;margin:4px 0 16px}
+  .edu li{list-style:none;position:relative;padding-left:20px;color:#c7ccd4;font-size:.93rem;margin-bottom:7px}
+  .edu li::before{content:"★";position:absolute;left:0;color:var(--accent);font-size:.75rem;top:3px}
 
-  .hero-bio {
-    font-size: 16px;
-    line-height: 1.65;
-    color: #b0ada8;
-    max-width: 560px;
-    margin-bottom: 32px;
-  }
+  /* ---------- Contact ---------- */
+  #contact{text-align:center;background:radial-gradient(ellipse 60% 80% at 50% 110%,rgba(90,162,255,.1),transparent)}
+  #contact h2{font-size:2rem}
+  #contact p{color:var(--muted);max-width:480px;margin:12px auto 28px}
 
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 40px;
-  }
+  footer{border-top:1px solid var(--border);padding:26px 0;text-align:center;color:var(--muted);font-size:.85rem}
 
-  .tag {
-    display: inline-block;
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--tag-text);
-    background: var(--tag-bg);
-    border: 1px solid var(--border);
-    padding: 4px 12px;
-    border-radius: 3px;
-    letter-spacing: 0.01em;
-  }
-
-  .tag.highlight {
-    color: var(--accent);
-    border-color: rgba(201,135,90,0.3);
-    background: rgba(201,135,90,0.06);
-  }
-
-  .hero-links {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-
-  .hero-links a {
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 13px;
-    color: var(--muted);
-    text-decoration: none;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 2px;
-    transition: color 0.15s, border-color 0.15s;
-  }
-
-  .hero-links a:hover { color: var(--text); border-color: var(--text); }
-
-  /* ── stats ── */
-  .stats { display: flex; gap: 0; }
-  .stat {
-    flex: 1;
-    padding: 24px 0;
-    border-right: 1px solid var(--border);
-    padding-right: 32px;
-    margin-right: 32px;
-  }
-  .stat:last-child { border-right: none; padding-right: 0; margin-right: 0; }
-  .stat-number {
-    font-family: 'DM Serif Display', Georgia, serif;
-    font-size: 32px;
-    font-weight: 400;
-    color: var(--text);
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-  .stat-label { font-family: 'Inter', -apple-system, sans-serif; font-size: 12px; color: var(--muted); line-height: 1.4; }
-
-  /* ── penholt feature card ── */
-  .penholt-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    overflow: hidden;
-    margin-bottom: 48px;
-  }
-
-  .penholt-header {
-    padding: 32px 32px 24px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  .penholt-title-block h2 {
-    font-family: 'DM Serif Display', Georgia, serif;
-    font-size: 26px;
-    font-weight: 400;
-    color: var(--text);
-    margin-bottom: 6px;
-  }
-
-  .penholt-title-block .subtitle {
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 13px;
-    color: var(--muted);
-  }
-
-  .penholt-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 12px;
-    color: var(--accent);
-    text-decoration: none;
-    border: 1px solid rgba(201,135,90,0.3);
-    padding: 6px 14px;
-    border-radius: 3px;
-    white-space: nowrap;
-    transition: background 0.15s;
-  }
-  .penholt-link:hover { background: rgba(201,135,90,0.08); }
-  .penholt-link svg { width: 11px; height: 11px; }
-
-  .penholt-body { padding: 32px; }
-
-  .penholt-description {
-    font-size: 15px;
-    color: #b0ada8;
-    line-height: 1.7;
-    margin-bottom: 28px;
-    max-width: 580px;
-  }
-
-  .feature-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 28px;
-  }
-
-  .feature-item {
-    padding: 16px 20px;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-  }
-
-  .feature-item .feature-name {
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 4px;
-  }
-
-  .feature-item .feature-desc {
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.5;
-  }
-
-  .penholt-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  .stack-tag {
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 11px;
-    color: var(--muted);
-    background: var(--bg);
-    border: 1px solid var(--border);
-    padding: 3px 10px;
-    border-radius: 2px;
-    letter-spacing: 0.02em;
-  }
-
-  /* ── experience ── */
-  .exp-item { margin-bottom: 48px; }
-  .exp-item:last-child { margin-bottom: 0; }
-
-  .exp-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 16px;
-    margin-bottom: 4px;
-    flex-wrap: wrap;
-  }
-
-  .exp-role {
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--text);
-  }
-
-  .exp-date {
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 12px;
-    color: var(--muted);
-    white-space: nowrap;
-  }
-
-  .exp-company {
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 13px;
-    color: var(--muted);
-    margin-bottom: 16px;
-  }
-
-  .exp-company span {
-    color: var(--accent);
-  }
-
-  .exp-points { list-style: none; }
-
-  .exp-points li {
-    font-size: 14px;
-    color: #9a9793;
-    line-height: 1.65;
-    padding-left: 16px;
-    position: relative;
-    margin-bottom: 8px;
-  }
-
-  .exp-points li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--border);
-  }
-
-  /* ── other projects ── */
-  .proj-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 24px;
-    padding: 24px 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .proj-item:last-child { border-bottom: none; }
-
-  .proj-content { flex: 1; }
-
-  .proj-name {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 6px;
-  }
-
-  .proj-desc {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.6;
-    margin-bottom: 10px;
-  }
-
-  .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-
-  .proj-tag {
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 11px;
-    color: var(--muted);
-    background: var(--tag-bg);
-    border: 1px solid var(--border);
-    padding: 2px 8px;
-    border-radius: 2px;
-  }
-
-  /* ── skills ── */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-  }
-
-  .skill-group-label {
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 12px;
-  }
-
-  .skill-list { list-style: none; }
-
-  .skill-list li {
-    font-size: 13px;
-    color: #9a9793;
-    margin-bottom: 6px;
-  }
-
-  /* ── CTA ── */
-  #contact { border-top: 1px solid var(--border); padding: 72px 0 100px; }
-
-  .cta-line {
-    font-family: 'DM Serif Display', Georgia, serif;
-    font-size: clamp(28px, 5vw, 40px);
-    font-weight: 400;
-    color: var(--text);
-    margin-bottom: 12px;
-    line-height: 1.2;
-  }
-
-  .cta-sub {
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 14px;
-    color: var(--muted);
-    margin-bottom: 32px;
-  }
-
-  .cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--accent);
-    color: #fff;
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    text-decoration: none;
-    padding: 11px 22px;
-    border-radius: 4px;
-    transition: opacity 0.15s;
-  }
-
-  .cta-btn:hover { opacity: 0.88; }
-
-  /* ── footer ── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 24px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  footer span, footer a {
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 12px;
-    color: var(--muted);
-    text-decoration: none;
-  }
-
-  footer a:hover { color: var(--text); }
-
-  /* ── responsive ── */
-  @media (max-width: 600px) {
-    .feature-grid { grid-template-columns: 1fr; }
-    .skills-grid { grid-template-columns: 1fr 1fr; }
-    .stats { flex-direction: column; gap: 24px; }
-    .stat { border-right: none; padding-right: 0; margin-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
-    .stat:last-child { border-bottom: none; }
-    .penholt-header { flex-direction: column; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    * { transition: none !important; }
+  /* ---------- Reveal ---------- */
+  @media(prefers-reduced-motion:no-preference){
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+    .reveal.in{opacity:1;transform:none}
   }
 </style>
 </head>
 <body>
 
-<div class="page">
+<nav>
+  <div class="container">
+    <ul>
+      <li><a href="#featured">Featured</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <!-- HERO -->
-  <section id="hero">
-    <p class="hero-label">Product · IIT Bombay '26</p>
-    <h1>Shah Abrar<br><em>Ul Haq</em> Peerzada</h1>
-    <p class="hero-bio">
-      I build products end-to-end — from zero to deployed. Currently focused on EdTech and B2C SaaS, with direct experience shipping features at a YC-backed platform and building a full-stack workspace from scratch.
-    </p>
-    <div class="tags">
-      <span class="tag highlight">Open to PM &amp; product roles</span>
-      <span class="tag">B2C SaaS</span>
-      <span class="tag">IIT Bombay '26</span>
-      <span class="tag">Mumbai</span>
+<header>
+  <div class="container">
+    <p class="kicker">Product · Operations · IIT Bombay</p>
+    <h1>Shah Abrar Ul Haq Peerzada</h1>
+    <p class="tagline">I build, ship, and operate products end-to-end — from <strong>user research</strong> through <strong>go-to-market</strong>. Currently consulting on EdTech curriculum at <strong>PACE IIT &amp; Medical</strong>; previously PM intern at <strong>RevisionDojo (YC F24)</strong> and founder of <strong>Penholt</strong>.</p>
+    <div class="btns">
+      <a class="btn btn-primary" href="https://penholt.com" target="_blank" rel="noopener">View Penholt ↗</a>
+      <a class="btn btn-ghost" href="mailto:abrar.iitb@gmail.com">Get in touch</a>
+      <a class="btn btn-ghost" href="https://github.com/shahabrar016" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/shah-abrar/" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>
-    <div class="hero-links">
-      <a href="mailto:shahabrar2022@gmail.com">shahabrar2022@gmail.com</a>
-      <a href="https://linkedin.com/in/shah-abrar" target="_blank">LinkedIn</a>
-      <a href="https://penholt.com" target="_blank">penholt.com</a>
-    </div>
-  </section>
+    <p class="location">📍 Mumbai, India · abrar.iitb@gmail.com</p>
+  </div>
+</header>
 
-  <!-- NUMBERS -->
-  <section id="numbers">
-    <p class="eyebrow">By the numbers</p>
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-number">300k+</div>
-        <div class="stat-label">Students on RevisionDojo's platform</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">20+</div>
-        <div class="stat-label">Product features shaped through structured feedback</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">15%</div>
-        <div class="stat-label">Lift in engagement via AI tool refinement</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PENHOLT -->
-  <section id="penholt">
-    <p class="eyebrow">Featured project</p>
-
-    <div class="penholt-card">
-      <div class="penholt-header">
-        <div class="penholt-title-block">
-          <h2>Penholt</h2>
-          <p class="subtitle">IB Student Workspace · Full-stack SaaS · Founder</p>
-        </div>
-        <a class="penholt-link" href="https://penholt.com" target="_blank">
-          penholt.com
-          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M2.5 9.5l7-7M4 2.5h5.5V8"/>
-          </svg>
-        </a>
-      </div>
-
-      <div class="penholt-body">
-        <p class="penholt-description">
-          Penholt is a workspace built specifically for IB Diploma students — a single platform to plan, draft, and submit Internal Assessments, the Extended Essay, and TOK work. I identified a gap in how IB students manage their two-year workload: existing tools are either school-administered (Managebac) or generic (Notion). Penholt is the first student-side tool built around IB assessment criteria and deadlines.
-        </p>
-
-        <div class="feature-grid">
-          <div class="feature-item">
-            <div class="feature-name">IA Workspace</div>
-            <div class="feature-desc">Structured editor for Math, Sciences, and Humanities IAs — aligned to IB criterion rubrics, with word count and section tracking.</div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-name">Extended Essay Planner</div>
-            <div class="feature-desc">Chapter-by-chapter EE builder with supervisor comment flow, draft versioning, and 4,000-word guardrails.</div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-name">TOK & CAS Tracker</div>
-            <div class="feature-desc">Exhibition object planner, TOK essay argument builder, and CAS hour log across Creativity, Activity, and Service.</div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-name">Deadline Dashboard</div>
-            <div class="feature-desc">Personalised study planner that maps IA deadlines, EE submissions, and exam timetables into a single view.</div>
-          </div>
-        </div>
-
-        <p class="penholt-description" style="margin-bottom: 20px;">
-          Built and deployed independently — React frontend on Cloudflare Pages, Supabase for auth and database, Resend for transactional email, OTP-based authentication, custom domain and DNS setup, Google Search Console indexing, and sitemap configuration. Full ownership from product scoping to live deployment.
-        </p>
-
-        <div class="penholt-stack">
-          <span class="stack-tag">React</span>
-          <span class="stack-tag">TypeScript</span>
-          <span class="stack-tag">Supabase</span>
-          <span class="stack-tag">PostgreSQL</span>
-          <span class="stack-tag">Cloudflare Pages</span>
-          <span class="stack-tag">Resend</span>
-          <span class="stack-tag">DNS / SEO</span>
-          <span class="stack-tag">Vite</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <p class="eyebrow">Experience</p>
-
-    <div class="exp-item">
-      <div class="exp-header">
-        <span class="exp-role">Product Management Intern</span>
-        <span class="exp-date">May '25 – Aug '25</span>
-      </div>
-      <p class="exp-company"><span>RevisionDojo</span> · YC F24 · Global EdTech · 300k+ students</p>
-      <ul class="exp-points">
-        <li>Ran structured user research across 2,400+ IB schools to surface friction in the AI grading and personalised study plan flows — findings directly shaped the product roadmap for two sprint cycles.</li>
-        <li>Gave detailed feature feedback on 20+ product releases, identifying drop-off points and proposing UX changes that improved AI tool engagement by 15%.</li>
-        <li>Worked embedded in a 10-person cross-functional team — collaborated with engineering, content, and growth on go-to-market decisions for new question bank features.</li>
-        <li>Contributed to positioning decisions for the IB Mathematics AA and AI subject verticals, analysing competitor coverage gaps and recommending syllabus alignment priorities.</li>
-      </ul>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-header">
-        <span class="exp-role">Associate Consultant Intern</span>
-        <span class="exp-date">Jul '24</span>
-      </div>
-      <p class="exp-company"><span>Distinct Horizon</span> · AgriTech Consultancy</p>
-      <ul class="exp-points">
-        <li>Delivered ROI analysis across agricultural technology adoption scenarios, supporting client decisions that drove 10–60% productivity gains.</li>
-        <li>Led client pitch preparation and stakeholder presentations, negotiating partnership terms and strengthening relationships with agri-sector clients.</li>
-      </ul>
-    </div>
-
-  </section>
-
-  <!-- OTHER PROJECTS -->
-  <section id="projects">
-    <p class="eyebrow">Other projects</p>
-
-    <div class="proj-item">
-      <div class="proj-content">
-        <p class="proj-name">Interactive Salt Analysis Platform</p>
-        <p class="proj-desc">10-module JEE Advanced-level HTML app — cation group tests, reagent simulators, MCQ scoring, and a revision cheat sheet. Designed to replace static slides with live exploratory learning for 100+ JEE aspirants.</p>
-        <div class="proj-tags">
-          <span class="proj-tag">HTML / CSS / JS</span>
-          <span class="proj-tag">Simulation</span>
-          <span class="proj-tag">EdTech</span>
-          <span class="proj-tag">JEE</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="proj-item">
-      <div class="proj-content">
-        <p class="proj-name">Skin Cancer Classifier · CNN</p>
-        <p class="proj-desc">Trained a convolutional neural network on the 2,357-image ISIC dataset using transfer learning and data augmentation, achieving high accuracy across 9 cancer types. IIT Bombay DH302 course project.</p>
-        <div class="proj-tags">
-          <span class="proj-tag">Python</span>
-          <span class="proj-tag">CNN</span>
-          <span class="proj-tag">Transfer Learning</span>
-          <span class="proj-tag">ML</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="proj-item">
-      <div class="proj-content">
-        <p class="proj-name">Vethrin · Co-founder</p>
-        <p class="proj-desc">Identified a trust gap in the premium saffron market — counterfeit products dominate, and buyers have no verification mechanism. Designed and shipped a batch traceability system that lets customers verify origin through a public-facing QR flow, directly addressing the product's core trust problem. Owned the full go-to-market: brand positioning, pricing architecture, customer acquisition strategy, and lab testing pipeline via Spices Board QEL. Built the technical stack independently to keep iteration fast.</p>
-        <div class="proj-tags">
-          <span class="proj-tag">Product strategy</span>
-          <span class="proj-tag">Go-to-market</span>
-          <span class="proj-tag">Next.js</span>
-          <span class="proj-tag">Supabase</span>
-          <span class="proj-tag">Founder</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <p class="eyebrow">Skills</p>
-    <div class="skills-grid">
-      <div>
-        <p class="skill-group-label">Product</p>
-        <ul class="skill-list">
-          <li>Roadmapping</li>
-          <li>User research</li>
-          <li>Feature prioritisation</li>
-          <li>A/B testing</li>
-          <li>KPI tracking</li>
-          <li>Go-to-market</li>
-        </ul>
-      </div>
-      <div>
-        <p class="skill-group-label">Engineering</p>
-        <ul class="skill-list">
-          <li>React / TypeScript</li>
-          <li>Python</li>
-          <li>SQL / PostgreSQL</li>
-          <li>Supabase</li>
-          <li>Cloudflare</li>
-          <li>Git / GitHub</li>
-        </ul>
-      </div>
-      <div>
-        <p class="skill-group-label">Analysis</p>
-        <ul class="skill-list">
-          <li>Financial modelling</li>
-          <li>ROI analysis</li>
-          <li>Time series</li>
-          <li>MATLAB</li>
-          <li>Data visualisation</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <p class="cta-line">Let's build something.</p>
-    <p class="cta-sub">Open to product, growth, and EdTech roles — full-time or internship.</p>
-    <a class="cta-btn" href="mailto:shahabrar2022@gmail.com">
-      Get in touch
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M2.5 9.5l7-7M4 2.5h5.5V8"/>
-      </svg>
-    </a>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <span>Shah Abrar Ul Haq Peerzada</span>
-    <a href="https://linkedin.com/in/shahabrar" target="_blank">LinkedIn →</a>
-  </footer>
-
+<div class="container">
+  <div class="stats reveal">
+    <div class="stat"><b>300K+</b><span>Students Reached</span></div>
+    <div class="stat"><b>20+</b><span>Features Shaped</span></div>
+    <div class="stat"><b>15%</b><span>Engagement Lift</span></div>
+    <div class="stat"><b>₹5L+</b><span>Sponsorships Secured</span></div>
+  </div>
 </div>
 
+<!-- ================= FEATURED ================= -->
+<section id="featured">
+  <div class="container">
+    <h2>Featured Project</h2>
+    <p class="section-sub">The product I scoped, designed, built, and shipped — solo.</p>
+    <div class="featured reveal">
+      <span class="badge">Featured · Founder &amp; Solo Developer</span>
+      <h3>Penholt — SaaS Academic Workspace for IB Students</h3>
+      <p class="meta">2025 – Present · <a href="https://penholt.com" target="_blank" rel="noopener">penholt.com</a></p>
+      <p>I identified an unmet need in the IB student workflow and independently took Penholt from zero to launch — owning the full product lifecycle: user research, scoping, design, build, and go-to-market.</p>
+      <div class="modules">
+        <div class="module"><b>End-to-end ownership</b>Research → design → ship → iterate, with no team handoffs.</div>
+        <div class="module"><b>Feedback-loop iteration</b>Product decisions driven by user feedback and real usage signals.</div>
+        <div class="module"><b>Organic acquisition</b>SEO &amp; discoverability strategy built from day one, driving growth.</div>
+      </div>
+      <a class="link" href="https://penholt.com" target="_blank" rel="noopener">Visit penholt.com ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience">
+  <div class="container">
+    <h2>Experience</h2>
+    <p class="section-sub">Product, operations, and consulting roles across EdTech, agri-tech, and e-commerce.</p>
+    <div class="xp">
+
+      <div class="xp-item reveal">
+        <div class="xp-head"><h3>EdTech Curriculum Consultant</h3><span class="when">May 2026 – Present</span></div>
+        <p class="xp-co">PACE IIT and Medical <span>· Mumbai, India</span></p>
+        <ul>
+          <li>Diagnosed content-delivery bottlenecks and redesigned module sequencing via performance-pattern analysis, improving content throughput and student outcome metrics.</li>
+          <li>Built structured documentation, version-control, and tracking systems for curriculum modules, standardizing quality benchmarks across iterative content cycles.</li>
+          <li>Partner with faculty and content teams to translate student performance data into curriculum and sequencing decisions across the test-prep portfolio.</li>
+        </ul>
+      </div>
+
+      <div class="xp-item reveal">
+        <div class="xp-head"><h3>Product Management Intern</h3><span class="when">May 2025 – Aug 2025</span></div>
+        <p class="xp-co">RevisionDojo (YC F24) <span>· Global EdTech Platform · Remote</span></p>
+        <ul>
+          <li>Authored 500+ IB exam-style questions and integrated 1,000+ questions into the platform, achieving 100% syllabus alignment for 300,000+ students across 2,400+ schools.</li>
+          <li>Collaborated with a 10-member cross-functional team to refine AI-driven tools, increasing user engagement by 15%.</li>
+          <li>Provided structured feedback on 20+ features, improving personalized study plans and AI grading accuracy by 10%.</li>
+          <li>Mapped user journeys and syllabus gaps, surfacing friction in study workflows and informing roadmap decisions.</li>
+        </ul>
+      </div>
+
+      <div class="xp-item reveal">
+        <div class="xp-head"><h3>Associate Consultant Intern</h3><span class="when">Jul 2024</span></div>
+        <p class="xp-co">Distinct Horizon <span>· Agricultural Technology Consultancy · Mumbai, India</span></p>
+        <ul>
+          <li>Strategized agricultural technology adoption for clients, driving 10–60% productivity gains through ROI analysis of machinery and input costs.</li>
+          <li>Conducted market research and delivered client pitches, strengthening stakeholder relationships.</li>
+          <li>Negotiated partnerships and tracked performance through data-driven metrics, boosting revenue and farmer engagement with technology adoption.</li>
+        </ul>
+      </div>
+
+      <div class="xp-item reveal">
+        <div class="xp-head"><h3>Business Development Intern</h3><span class="when">May 2023 – Jul 2023</span></div>
+        <p class="xp-co">BasketHunt <span>· E-commerce Platform · Remote</span></p>
+        <ul>
+          <li>Owned the outbound funnel end-to-end — sourced and qualified 150+ prospects and built an Excel-based lead-scoring tracker that lifted outreach-to-meeting conversion by ~12%.</li>
+          <li>Benchmarked competitor platforms on pricing, commission structures, and seller onboarding flows; findings shaped pitch positioning and category prioritization.</li>
+          <li>Managed a CRM pipeline of 100+ active conversations, using stage-wise conversion data to tighten follow-up cadence and hand qualified leads to the founding team.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
+  <div class="container">
+    <h2>Projects</h2>
+    <p class="section-sub">Finance, ML, and product strategy work — built in coursework, clubs, and self-directed time.</p>
+    <div class="grid">
+
+      <div class="card reveal">
+        <div class="tags"><span class="chip">Quant</span><span class="chip">Finance</span></div>
+        <h3>Quantitative Finance</h3>
+        <p class="when">Summer of Quant, QuantCommunity, IIT Bombay · Jul 2024</p>
+        <ul>
+          <li>Mastered Time Series Analysis and Financial Derivatives, building deep financial modeling expertise.</li>
+          <li>Optimized investment strategies applying KPI tracking and market-timing insights.</li>
+          <li>Delivered actionable insights on risk assessment and portfolio management.</li>
+        </ul>
+      </div>
+
+      <div class="card reveal">
+        <div class="tags"><span class="chip">Finance</span><span class="chip">Research</span></div>
+        <h3>FinSearch</h3>
+        <p class="when">Finance Club, IIT Bombay · Jun 2023 – Sep 2023</p>
+        <ul>
+          <li>Analyzed capital structure theories through case studies on WACC and tradeoff theory.</li>
+          <li>Evaluated financial models (pecking order, signaling) to optimize lending strategies.</li>
+          <li>Enhanced credit risk management through forecasting and stakeholder analysis.</li>
+        </ul>
+      </div>
+
+      <div class="card reveal">
+        <div class="tags"><span class="chip">Machine Learning</span><span class="chip">CNN</span></div>
+        <h3>Skin Cancer Classification</h3>
+        <p class="when">DH302 · Guide: Prof. Kshitij Jadav · Autumn 2023</p>
+        <ul>
+          <li>Built a CNN-based classifier on the ISIC dataset (2,357 images) end-to-end — problem framing through validation.</li>
+          <li>Implemented transfer learning and data augmentation to enhance model performance.</li>
+          <li>Achieved high accuracy distinguishing nine types of skin cancer and benign conditions.</li>
+        </ul>
+      </div>
+
+      <div class="card reveal">
+        <div class="tags"><span class="chip">AI</span><span class="chip">Python</span></div>
+        <h3>Tourism AI Agent</h3>
+        <p class="when">Self Project · Aug 2025</p>
+        <ul>
+          <li>Developed a Python-based AI agent with fuzzy matching for personalized tourism recommendations.</li>
+          <li>Integrated 2025 travel data, enhancing engagement with attractions and eco-tips.</li>
+        </ul>
+      </div>
+
+      <div class="card reveal">
+        <div class="tags"><span class="chip">EdTech</span><span class="chip">AI</span></div>
+        <h3>EdTech Math AI Tutor</h3>
+        <p class="when">Self Project · Aug 2025</p>
+        <ul>
+          <li>Built an AI tutor using SymPy and Matplotlib that solves and visualizes math problems with LaTeX-rendered outputs.</li>
+          <li>Designed interactive features like function plotting, improving learning accessibility by 20%.</li>
+        </ul>
+      </div>
+
+      <div class="card reveal">
+        <div class="tags"><span class="chip">Strategy</span><span class="chip">Case Study</span></div>
+        <h3>Social Enterprise Case Study</h3>
+        <p class="when">ENT 613 · Spring 2024–25</p>
+        <ul>
+          <li>Evaluated a social enterprise's business model, identifying growth opportunities via market research.</li>
+          <li>Developed strategies to boost outreach by 15%, integrating financial and operational KPIs.</li>
+          <li>Presented scalability recommendations grounded in stakeholder collaboration.</li>
+        </ul>
+      </div>
+
+      <div class="card reveal">
+        <div class="tags"><span class="chip">FEM</span><span class="chip">Research</span></div>
+        <h3>Biomechanics of Thumb CMC Joint</h3>
+        <p class="when">ME 6114 · Guide: Prof. Darshan S. Shah · Spring 2024–25</p>
+        <ul>
+          <li>Analyzed thumb CMC joint mechanics using finite element modeling to simulate load distribution and joint stability.</li>
+          <li>Assessed cartilage stress under varying loads, identifying key stress-concentration areas.</li>
+          <li>Proposed an optimized joint design to enhance stability and reduce wear, validated through simulation.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= LEADERSHIP ================= -->
+<section id="leadership">
+  <div class="container">
+    <h2>Leadership</h2>
+    <p class="section-sub">Running operations, sponsorships, and people programs at institute scale.</p>
+    <div class="lead-grid">
+
+      <div class="card reveal">
+        <h3>Sports Secretary</h3>
+        <p class="when">Hostel 1, IIT Bombay · Jul 2023 – Apr 2024</p>
+        <ul>
+          <li>Orchestrated tournaments across football, volleyball, and cricket with 10+ teams, boosting engagement 30%.</li>
+          <li>Secured ₹5 lakh+ in sponsorships; led Hostel 1 to 1st place in Freshesta with 50+ participants.</li>
+        </ul>
+      </div>
+
+      <div class="card reveal">
+        <h3>College Ambassador Mentor</h3>
+        <p class="when">Techfest, IIT Bombay · Jun 2023 – Apr 2024</p>
+        <ul>
+          <li>Guided 100+ ambassadors from 100+ colleges, boosting participation 20% via workshops and performance tracking.</li>
+          <li>Pioneered event ideation integrating market research and ROI analysis.</li>
+        </ul>
+      </div>
+
+      <div class="card reveal">
+        <h3>Media &amp; PR Coordinator</h3>
+        <p class="when">Abhyuday, IIT Bombay · Jan 2023 – Jun 2023</p>
+        <ul>
+          <li>Designed branding campaigns expanding reach to 400+ universities via digital marketing.</li>
+          <li>Amplified event visibility by 25% through optimized content and KPI-driven outreach.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills">
+  <div class="container">
+    <h2>Skills</h2>
+    <p class="section-sub">Grouped by how I use them.</p>
+    <div class="skill-row reveal"><h3>Product</h3><p>Product Roadmapping · User Research · Feature Prioritization · Go-to-Market · KPI Tracking · Funnel Analytics · SEO &amp; Discoverability · Stakeholder Management</p></div>
+    <div class="skill-row reveal"><h3>Engineering</h3><p>Python · SQL · React · SymPy · Matplotlib · Figma · Google Analytics · MATLAB · AutoCAD · Fusion 360 · LaTeX</p></div>
+    <div class="skill-row reveal"><h3>Analysis</h3><p>Financial Modeling · Time Series Analysis · WACC · ROI Analysis · Market Research · Excel Reporting · CRM &amp; Pipeline Management · Process Documentation</p></div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section id="education">
+  <div class="container">
+    <h2>Education</h2>
+    <div class="edu reveal">
+      <h3>Indian Institute of Technology Bombay</h3>
+      <p class="meta">B.Tech., Metallurgical Engineering and Materials Science · 2022 – 2026 · CPI 8.26</p>
+      <ul>
+        <li>Ranked among the top 0.15 million candidates in JEE Advanced (2022).</li>
+        <li>Honored by the District Administration for academic excellence at Republic Day Celebrations (2022).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="container">
+    <h2>Let's build something together.</h2>
+    <p>Open to product, operations, and PM conversations — internships, collaborations, or just talking shop about EdTech.</p>
+    <div class="btns" style="justify-content:center">
+      <a class="btn btn-primary" href="mailto:abrar.iitb@gmail.com">Email me</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/shah-abrar/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn btn-ghost" href="https://github.com/shahabrar016" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Shah Abrar Ul Haq Peerzada · Built with plain HTML &amp; CSS · Mumbai, India</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
 </body>
 </html>
